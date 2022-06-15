@@ -1,13 +1,14 @@
 import React from 'react';
 
-// const title: JSX.Element = (
-//   <h1 className="text-center py-2">
-//     React + TypeScript
+// const title: React.ReactElement = (
+//   <h1 className='text-center py-2'>
+//     React+TS
 //   </h1>
 // )
 
-// for React children
-// const Headline = ({children} : { children : React.ReactNode}) => {
+// You can assing to children null | string | number etc or assign React.ReactNode
+
+// const Headline = ({children}: { children: React.ReactNode } ) => {
 //   return (
 //     <h1 className='text-center py-2'>
 //       {children}
@@ -15,28 +16,32 @@ import React from 'react';
 //   )
 // }
 
-// for our props. we can assign interface or type of props or assign type to component
+// Also you can create custom props
 
-interface Props { 
+interface Props {
   children?: React.ReactNode;
   id?: number;
-  className?: string
+  classname?: string
 }
 
-// const Headline = ({children, id} : Props) => {
+// const Headline = ({children, id, classname}: Props ) => {
 //   return (
 //     <h1 className='text-center py-2'>
 //       {children}
 //       {id}
+//       {classname}
 //     </h1>
 //   )
 // }
 
-const Headline: React.FC<Props> = ({children, id}) => {
+// Also you can create common type for function with generic
+
+const Headline: React.FC<Props> = ({children, id, classname}: Props ) => {
   return (
     <h1 className='text-center py-2'>
       {children}
       {id}
+      {classname}
     </h1>
   )
 }
@@ -44,8 +49,8 @@ const Headline: React.FC<Props> = ({children, id}) => {
 function App() {
   return (
     <div>
-      <Headline id={5}>
-      React + TypeScript
+      <Headline id={1} classname={'Hello'}>
+        <div>Hello</div>
       </Headline>
     </div>
   );
