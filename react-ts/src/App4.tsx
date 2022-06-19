@@ -1,4 +1,6 @@
+import axios from 'axios';
 import React, { useEffect, useState } from 'react';
+import { getEnvironmentData } from 'worker_threads';
 
 interface Person {
   name: string;
@@ -27,10 +29,16 @@ async function getPerson (id=1): Promise<Person> {
 const Hooks = () => {
 
   const [person, setPerson] = useState<Person | null>(null)
+  console.log(person)
 
   useEffect(() => {
     getPerson().then(data => setPerson(data) )
   })
+
+  // useEffect((id=1) => {
+  //     axios.get<Person>(`https://swapi.dev/api/people/${id}`)
+  //     .then(data => setPerson(data.data))
+  // }, [person])
   return (
     <div>
       {person?.name}

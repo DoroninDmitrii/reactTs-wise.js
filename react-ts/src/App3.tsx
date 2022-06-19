@@ -10,7 +10,6 @@ const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
 
 console.log(value)
 
-
   return (
     <input type="number" value={value} onChange={onChange} placeholder='Custom input' className='my-input' {...props}/>
   )

@@ -36,10 +36,9 @@ interface Props {
 
 // Also you can create common type for function with generic
 
-const Headline: React.FC<Props> = ({children, id, classname}: Props ) => {
+const Headline: React.FC<Props> = ({id, classname}) => {
   return (
     <h1 className='text-center py-2'>
-      {children}
       {id}
       {classname}
     </h1>
