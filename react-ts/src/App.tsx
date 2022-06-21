@@ -6,6 +6,7 @@ import React from 'react';
 //   </h1>
 // )
 
+
 // You can assing to children null | string | number etc or assign React.ReactNode
 
 // const Headline = ({children}: { children: React.ReactNode } ) => {
